@@ -81,6 +81,33 @@ button:disabled {
   place-items: center;
 }
 
+.stage-tools {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0.2rem 0 0.9rem;
+}
+
+#debugToggle {
+  font-weight: 700;
+}
+
+#stageSelect {
+  border-radius: 8px;
+  border: 1px solid #777;
+  background: #2f3b46;
+  color: inherit;
+  padding: 0.45rem 0.55rem;
+  min-width: min(280px, 84vw);
+}
+
+#stageSelect:disabled {
+  opacity: 0.55;
+}
+
+
 .board {
   display: grid;
   gap: var(--cell-gap);

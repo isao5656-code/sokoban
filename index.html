@@ -13,8 +13,16 @@
 
     <section class="hud">
       <span id="steps">手数: 0</span>
+      <span id="shortest">最短: 計算中...</span>
+      <span id="progress">クリア: 0/0</span>
       <button id="resetBtn" type="button">リセット</button>
       <button id="nextBtn" type="button" disabled>次のステージ</button>
+    </section>
+
+    <section class="stage-tools" aria-label="ステージ操作">
+      <button id="debugToggle" type="button" aria-pressed="false">デバッグ: OFF</button>
+      <label for="stageSelect">ステージ選択</label>
+      <select id="stageSelect" disabled></select>
     </section>
 
     <section class="board-wrap">
