@@ -9,6 +9,8 @@
   --box-on-goal: #80ed99;
   --player: #4cc9f0;
   --text: #f8f9fa;
+  --cell-size: clamp(30px, 8.6vw, 44px);
+  --cell-gap: clamp(2px, 0.6vw, 4px);
 }
 
 * {
@@ -63,6 +65,12 @@ button {
   cursor: pointer;
 }
 
+#resetBtn {
+  padding: 0.58rem 1.15rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -75,17 +83,17 @@ button:disabled {
 
 .board {
   display: grid;
-  gap: 4px;
+  gap: var(--cell-gap);
   width: fit-content;
 }
 
 .cell {
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border-radius: clamp(5px, 1.2vw, 8px);
   display: grid;
   place-items: center;
-  font-size: 1.2rem;
+  font-size: clamp(0.95rem, 3.8vw, 1.2rem);
   user-select: none;
 }
 
@@ -128,22 +136,39 @@ button:disabled {
 }
 
 .clear-banner {
-  margin-top: 0.8rem;
-  padding: 0.65rem 0.9rem;
-  border-radius: 10px;
-  border: 1px solid #8be9a9;
-  background: linear-gradient(135deg, rgb(64 145 108 / 35%), rgb(31 111 235 / 20%));
+  margin-top: 0.9rem;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 2px solid #b8ffcb;
+  background: linear-gradient(135deg, rgb(64 145 108 / 52%), rgb(31 111 235 / 34%));
+  box-shadow: 0 0 0 2px rgb(184 255 203 / 20%), 0 10px 28px rgb(0 0 0 / 35%);
   text-align: center;
   display: grid;
-  gap: 0.2rem;
+  gap: 0.35rem;
 }
 
 .clear-banner strong {
-  font-size: 1.05rem;
+  font-size: clamp(1.15rem, 4.2vw, 1.35rem);
+  letter-spacing: 0.02em;
+}
+
+#clearDetail {
+  font-weight: 700;
 }
 
 .clear-banner[hidden] {
   display: none;
+}
+
+@media (max-width: 420px) {
+  .app {
+    width: 96vw;
+    padding: 0.8rem;
+  }
+
+  .help {
+    font-size: 0.92rem;
+  }
 }
 
 @media (min-width: 900px) {
